@@ -8,7 +8,9 @@ import type {
 
 export { ApiError };
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '');
+export const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ?? ''
+).replace(/\/$/, '');
 
 const TOKEN_KEY = 'cr_access_token';
 const EMAIL_KEY = 'cr_email';

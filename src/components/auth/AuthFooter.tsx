@@ -1,3 +1,4 @@
+import { API_BASE } from '../../api/client';
 import type { AuthMode } from './types';
 
 interface AuthFooterProps {
@@ -9,6 +10,8 @@ export function AuthFooter({
   mode,
   onSwitch,
 }: AuthFooterProps): React.JSX.Element {
+  const docsHref = `${API_BASE}/api/docs`;
+
   return (
     <footer className="auth-footer">
       <p className="auth-switch">
@@ -41,7 +44,9 @@ export function AuthFooter({
         )}
       </p>
       <p className="hint">
-        <a href="/api/docs">API docs</a>
+        <a href={docsHref} target="_blank" rel="noreferrer">
+          API docs
+        </a>
       </p>
     </footer>
   );
