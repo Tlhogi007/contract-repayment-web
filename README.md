@@ -2,10 +2,10 @@
 
 Vite + React UI for [contract-repayment](https://github.com/Tlhogi007/contract-repayment) (Nest API). Separate repo so CI, deploys, and reviews stay independent of the API.
 
-| | Local | Live (Render) |
-| -- | -- | -- |
-| UI | http://localhost:5173 | https://contract-repayment-web.onrender.com |
-| API | http://localhost:3000 | https://contract-repayment-api.onrender.com |
+|     | Local                 | Live (Vercel + Fly)                         |
+| --- | --------------------- | ------------------------------------------- |
+| UI  | http://localhost:5173 | https://contract-repayment-web.vercel.app   |
+| API | http://localhost:3000 | https://contract-repayment-api.fly.dev      |
 
 ## Quick start
 
@@ -29,7 +29,9 @@ CI on `main` / `develop`: lint → Vitest coverage → Vite build.
 
 ## Deploy
 
-Render Static Site from [`render.yaml`](./render.yaml). Build-time `VITE_API_BASE_URL` comes from the API service’s `RENDER_EXTERNAL_URL` in the same Render workspace. The API must allow this origin via `CORS_ORIGINS`.
+Hosted on **[Vercel](https://vercel.com)** from this repo. Set build-time `VITE_API_BASE_URL=https://contract-repayment-api.fly.dev` (no trailing slash). The Fly API must allow this origin via `CORS_ORIGINS`.
+
+Legacy Render static blueprint remains in [`render.yaml`](./render.yaml) for reference only.
 
 ## License
 

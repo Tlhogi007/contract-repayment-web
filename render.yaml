@@ -1,5 +1,5 @@
-# Static UI — pairs with https://github.com/Tlhogi007/contract-repayment (API).
-# Same Render workspace: wire VITE_API_BASE_URL from the API service URL.
+# Legacy Render Static Site (UI now primary on Vercel; API on Fly.io).
+# Pairs with https://github.com/Tlhogi007/contract-repayment (API).
 services:
   - type: web
     name: contract-repayment-web
