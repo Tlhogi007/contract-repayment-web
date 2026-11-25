@@ -45,6 +45,8 @@ function formatMessage(body: unknown): string {
   return 'Request failed';
 }
 
+const REQUEST_TIMEOUT_MS = 20_000;
+
 async function api<T>(
   path: string,
   init: RequestInit = {},
@@ -61,7 +63,11 @@ async function api<T>(
     }
   }
 
-  const res = await fetch(`${API_BASE}${path}`, { ...init, headers });
+  const res = await fetch(`${API_BASE}${path}`, {
+    ...init,
+    headers,
+    signal: init.signal ?? AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+  });
   if (res.status === 204) {
     return undefined as T;
   }
