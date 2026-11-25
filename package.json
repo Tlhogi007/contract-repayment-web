@@ -1,0 +1,32 @@
+{
+  "name": "contract-repayment-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Vite UI for contract-repayment API",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint --deny-warnings",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.108.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "^3.2.7",
+    "oxlint": "^1.90.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^3.2.7"
+  }
+}

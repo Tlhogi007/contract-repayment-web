@@ -1,0 +1,18 @@
+# Static UI — pairs with https://github.com/Tlhogi007/contract-repayment (API).
+# Same Render workspace: wire VITE_API_BASE_URL from the API service URL.
+services:
+  - type: web
+    name: contract-repayment-web
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          name: contract-repayment-api
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
